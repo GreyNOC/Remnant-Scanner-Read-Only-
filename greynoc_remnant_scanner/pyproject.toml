@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "greynoc-mcafee-remnant-scanner"
+version = "1.0.0"
+description = "GreyNOC read-only McAfee remnant scanner"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "GreyNOC" }]
+license = { text = "Proprietary - GreyNOC internal use" }
+keywords = ["greynoc", "mcafee", "scanner", "windows", "security"]
+dependencies = []
+
+[project.scripts]
+greynoc-mcafee-scanner = "greynoc_mcafee_scanner.app:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+greynoc_mcafee_scanner = ["assets/*.png", "assets/*.ico"]
